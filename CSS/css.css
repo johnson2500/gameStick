@@ -1,0 +1,119 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card-container{
+  position: absolute;
+  left: calc((100% - (80vh/1.5))/2);
+  top: 5%;
+  height: 80vh;
+  width: calc(80vh/1.5);
+  border: 1px solid black;
+  border-radius: 75px;
+  text-align: center;
+  box-shadow: lightgray 10px 10px;
+  background: white;
+  color: black;
+  overflow: hidden;
+}
+
+.card-label{
+  background: inherit;
+  color: inherit;
+}
+
+.white-container{
+  position: absolute;
+  left: calc((100% - (80vh/1.5))/2);
+  top: 5%;
+  height: 80vh;
+  width: calc(80vh/1.5);
+  border: 1px solid black;
+  border-radius: 75px;
+  text-align: center;
+  box-shadow: lightgray 10px 10px;
+  background: white;
+  color: black;
+}
+
+.card{
+  position: relative;
+  top: 50%;
+  font-weight: 600;
+}
+
+
+.thumbnail-container{
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 7%;
+}
+
+.thumbnail{
+  height: 100%;
+  border: 1px solid black;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  width: calc((100% - 14px)/7);
+  float: left;
+  text-align: center;
+  list-style: none;
+  background: darkgray;
+}
+
+.thumbnail:hover{
+  background: lightgray;
+}
+
+.thumbnail-label{
+  width: 100%;
+  text-align: center;
+  float: right;
+  position: relative;
+  top: 30%;
+}
+
+/* view switch button */
+
+#view-switch{
+  width: 50%;
+  position: absolute;
+  height: auto;
+  top: .5%;
+  right: 25%;
+  padding: 10px;
+  marin: 10px;
+}
+
+#viewSwitch{
+  padding: 10px;
+  marin: 10px;
+  border-radius: 5px;
+}
+
+.button{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+body{
+  background: darkredS;
+}
+
+img{
+  width: 80%;
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  left:20px;
+  border-radius: 75px;
+  overflow: hidden;
+}

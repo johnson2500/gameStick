@@ -1,0 +1,9 @@
+For Test 1)
+
+chat.ismIndicator is not present in the dataLayer
+
+For Test 2)
+
+C2C is not present on the page, chat would have to be loaded from another page.
+
+035100550 - 
