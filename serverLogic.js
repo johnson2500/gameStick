@@ -12,7 +12,7 @@ app.use(require('express').static('public'));
 app.set('port', process.env.PORT||3000);
 
 app.get('/',(req,res)=>{
-  res.sendFile(__dirname + '\\html.html');
+  res.sendFile(__dirname + 'html.html');
 });
 
 io.on('connection', function(socket){

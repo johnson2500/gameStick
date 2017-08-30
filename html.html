@@ -42,8 +42,48 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="JS/view.js"></script>
-  <script src="JS/serverSideCard.js"></script>
   <script src="JS/clientSide.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    $(function() {
+      var socket = io();
+      var user = {
+        firstName: ""
+      };
+
+      $("#chatContainer").hide();
+
+      $("#sumbitUserName").click(() => {
+        user.firstName = $("#userNameField").val();
+        socket.emit('newUser',user.firstName);
+        $("#userSubmitForm").hide();
+        $("#chatContainer").show();
+      });
+
+      $('form').submit(function() {
+        socket.emit('chat message', user.firstName + " : " + $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+
+      socket.on('chat message', function(msg) {
+        $('#messages').append($('<li>').text(msg));
+      });
+
+      socket.on('listOfUsers', function(msg) {
+        console.log(msg)
+        for(var i = 0; i<msg.length;i++){
+          $('#userList').append($('<li>').text(msg[i]));
+        }
+      });
+
+      $("#getCard").click(() => {
+        socket.emit('getCard', $('#m').val());
+      })
+    });
+  </script>
+</body>
 
 
 </body>
