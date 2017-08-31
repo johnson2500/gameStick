@@ -1,18 +1,15 @@
-// let ex = require('express')
-// let app = ex();
-// let fs = require('fs');
-// let path = require('path')
 
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var decks = require('./serverSideCard.js');
+
 
 app.use(require('express').static('public'));
+var currentWhiteCard = decks.whiteCardDeck.getCardFromDeck();
 
-app.set('port', process.env.PORT||3000);
-
-app.get('/',(req,res)=>{
-  res.sendFile(__dirname + 'html.html');
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/html.html');
 });
 
 io.on('connection', function(socket){
@@ -21,23 +18,28 @@ io.on('connection', function(socket){
     console.log('user disconnected');
   });
 
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
+  socket.on('getBlackCard', function(msg){
+    socket.emit('card', decks.blackCardDeck.getCardFromDeck())
   });
 
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+  socket.on('fillDeck', function(msg){
+    var x = [];
+    for(var i = 0;i<7;i++){
+      x.push(decks.blackCardDeck.getCardFromDeck())
+    }
+    socket.emit("filledDeck",x);
+    console.log("There are " + decks.blackCardDeck.deck.length + " cards in the blackDeck");
   });
 
-  socket.on('newUser',function(msg) {
-    users.push(msg);
-    console.log("newUser : " + msg);
-    console.log("users" + users)
-    io.emit("listOfUsers",users)
-  });
+  socket.on('getWhiteCard',function() {
+    currentWhiteCard = decks.whiteCardDeck.getCardFromDeck();
+    socket.broadcast.emit('whiteCard',currentWhiteCard)
+    socket.emit('whiteCard',currentWhiteCard)
+  })
+  socket.emit('whiteCard',currentWhiteCard);
 
 });
 
-app.listen(app.get('port'),()=>{
-  console.log("Exppress Started");
+http.listen(3000, function(){
+  console.log('listening on *:3000');
 });

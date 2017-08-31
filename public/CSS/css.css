@@ -84,18 +84,14 @@ body{
 
 #view-switch{
   width: 50%;
-  position: absolute;
-  height: auto;
-  top: .5%;
+  position: fixed;
+  height: 100px;
+  bottom : 7%;
   right: 25%;
   padding: 10px;
   marin: 10px;
-}
-
-#viewSwitch{
-  padding: 10px;
-  marin: 10px;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-size: 30px;
 }
 
 .button{
