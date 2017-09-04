@@ -36,6 +36,7 @@ io.on('connection', function(socket){
     socket.broadcast.emit('whiteCard',currentWhiteCard)
     socket.emit('whiteCard',currentWhiteCard)
   })
+
   socket.emit('whiteCard',currentWhiteCard);
 
 });

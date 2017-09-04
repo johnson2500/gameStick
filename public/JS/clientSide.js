@@ -10,6 +10,7 @@ class UserDeck {
     this.whiteCardsEarned = [];
     this.cardLabelArr = [];
     this.whiteCard = {};
+    this.currentBlackCardIndex = 0;
   }
   insertCard(card){
     //put card in deck in the place of the old card
@@ -19,10 +20,26 @@ class UserDeck {
     for(var i = 0;i<ar.length;i++){
       var x = new Card(i,ar[i]); // get a black card
       this.insertCard(x); // insert into user deck
-      view.cardChoices[i].setAttribute("label",x.label);
-      view.initClicks(view.cardChoices[i]);
     }
     view.blackCardView.content = this.blackCards[0].label;
+  }
+  getNextIndex(){
+    if(this.currentBlackCardIndex === 6){
+      this.currentBlackCardIndex = 0;
+      return this.currentBlackCardIndex;
+    } else {
+      this.currentBlackCardIndex++;
+      return this.currentBlackCardIndex;
+    }
+  }
+  getPrviousIndex(){
+    if(this.currentBlackCardIndex === 0){
+      this.currentBlackCardIndex = 6;
+      return this.currentBlackCardIndex;
+    } else {
+      this.currentBlackCardIndex--;
+      return this.currentBlackCardIndex;
+    }
   }
 }
 class User {
@@ -59,15 +76,18 @@ var currentDeck = new UserDeck();
 var socket = io();
 
 // this fills the user deck.
-socket.emit('fillDeck',function(msg) {console.log(msg)});
-socket.on('filledDeck',function (msg) {
-  currentDeck.fillDeck(msg);
+socket.emit('fillDeck',(msg)=>{console.log(msg)});
+socket.on('filledDeck',(msg)=>{
+    currentDeck.fillDeck(msg);
   view.blackCardView.content = currentDeck.blackCards[0].label;
 })
 
 // this gets the current white card
-socket.on('whiteCard',function (msg) {
+socket.on('whiteCard',(msg)=>{
   currentDeck.whiteCardInUse = new Card(0,msg);
-  console.log(currentDeck.whiteCardInUse);
   view.whiteCardView.initWhiteCard();
-})
+  table.initWhiteCard();
+});
+
+socket.on('userSubmittedCard',()=>{
+});

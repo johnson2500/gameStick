@@ -1,17 +1,46 @@
+/* Global tags */
+
 *{
   padding: 0;
   margin: 0;
 }
 
-body{
-  height: 100vh;
+button{
+  width: 100%;
+  padding: 10px;
+}
+
+img{
+  width: 80%;
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  left:20px;
+  border-radius: 75px;
   overflow: hidden;
 }
+
+/* Gloabal Classes */
+
+.center{
+  text-align: center;
+}
+
+/* landing page */
+
+#landingPage{
+  width: 90%;
+  position: fixed;
+  left: 5%;
+  height: 2%;
+}
+
+/* Card View */
 
 .card-container{
   position: absolute;
   left: calc((100% - (80vh/1.5))/2);
-  top: 5%;
+  top: 10%;
   height: 80vh;
   width: calc(80vh/1.5);
   border: 1px solid black;
@@ -46,70 +75,78 @@ body{
   position: relative;
   top: 50%;
   font-weight: 600;
+  overflow: hidden;
 }
 
+/* Status Bar */
 
-.thumbnail-container{
-  position: absolute;
-  bottom: 0%;
+.top-bar{
   width: 100%;
-  height: 7%;
+  position: fixed;
+  top: 0;
+  background: black;
+  color: white;
+  list-style: none;
+  height: 5%;
 }
 
-.thumbnail{
-  height: 100%;
-  border: 1px solid black;
-  border-top-left-radius: 20%;
-  border-top-right-radius: 20%;
-  width: calc((100% - 14px)/7);
-  float: left;
+.top-bar-menu{
   text-align: center;
-  list-style: none;
+  float: left;
+  color: inherit;
+  background: inherit;
+  width: calc(25% - 2%);
+  padding: 1%;
+  height: 100%;
+}
+
+.top-bar-menu:hover{
   background: darkgray;
 }
 
-.thumbnail:hover{
-  background: lightgray;
-}
-
-.thumbnail-label{
-  width: 100%;
-  text-align: center;
-  float: right;
-  position: relative;
-  top: 30%;
-}
-
-/* view switch button */
-
-#view-switch{
-  width: 50%;
-  position: fixed;
-  height: 100px;
-  bottom : 7%;
-  right: 25%;
-  padding: 10px;
-  marin: 10px;
-  border-radius: 20px;
-  font-size: 30px;
-}
-
-.button{
-  width: 100%;
+ul.top-bar>li.top-bar-menu>h1{
   height: 100%;
-  position: relative;
 }
 
-body{
-  background: darkredS;
-}
-
-img{
-  width: 80%;
-  position: absolute;
-  height: auto;
+.bottom-control{
+  position: fixed;
   bottom: 0;
-  left:20px;
-  border-radius: 75px;
-  overflow: hidden;
+  width: 100vw;
+}
+
+.controls{
+  width: 100%;
+}
+
+.bottom-control-button{
+  width: 100%;
+  float: left;
+}
+
+/* Choose Card View */
+
+ul.cards-submitted-list{
+  width: 75%;
+  position: fixed;
+  right: 12.5%;
+  top: 2%;
+  text-align: center;
+  list-style: none;
+}
+
+li.card-submitted-title-container{
+  background: black;
+  color: white;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 2%;
+}
+
+li.card-submitted-title-container-white{
+  background: white;
+  border: 1px solid black;
+  color: black;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 2%;
 }
