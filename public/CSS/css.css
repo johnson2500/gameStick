@@ -38,7 +38,7 @@ img{
 /* Card View */
 
 .card-container{
-  position: absolute;
+  position: fixed;
   left: calc((100% - (80vh/1.5))/2);
   top: 10%;
   height: 80vh;
@@ -52,29 +52,15 @@ img{
   overflow: hidden;
 }
 
-.card-label{
+#card-label{
   background: inherit;
   color: inherit;
 }
 
-.white-container{
-  position: absolute;
-  left: calc((100% - (80vh/1.5))/2);
-  top: 5%;
-  height: 80vh;
-  width: calc(80vh/1.5);
-  border: 1px solid black;
-  border-radius: 75px;
-  text-align: center;
-  box-shadow: lightgray 10px 10px;
-  background: white;
-  color: black;
-}
 
 .card{
   position: relative;
   top: 50%;
-  font-weight: 600;
   overflow: hidden;
 }
 
@@ -119,8 +105,8 @@ ul.top-bar>li.top-bar-menu>h1{
 }
 
 .bottom-control-button{
-  width: 100%;
-  float: left;
+  width: 50%;
+  float: right;
 }
 
 /* Choose Card View */
@@ -149,4 +135,12 @@ li.card-submitted-title-container-white{
   border-radius: 10px;
   padding: 5%;
   margin: 2%;
+}
+
+.animate-left{
+
+}
+
+.animate-right{
+
 }

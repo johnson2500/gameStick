@@ -8,8 +8,7 @@
 </head>
 
 <body>
-
-  <div id="landingPage">
+  <div id="landingPage"  style="display:none;" >
     <h1 class="center">Welcome to Cards Against Humanity</h1>
     <br>
     <br>
@@ -53,22 +52,26 @@
         <div id='view-switch' class="bottom-control-button">
           <button id="viewSwitch">Switch Card</button>
         </div>
+        <div id='view-switch' class="bottom-control-button">
+          <button id="viewSwitch">Switch Card</button>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <div id="chooseCardView">
-    <ul id="cardsSumbittedList" class="cards-submitted-list">
-      <li class="card-submitted-title-container-white">
-        <h4 id="tableWhiteCard"></h4>
-      </li>
-    </ul>
-  </div>
+    <div id="chooseCardView" style="display:none;">
+      <ul id="cardsSumbittedList" class="cards-submitted-list">
+        <li class="card-submitted-title-container-white">
+          <h4 id="tableWhiteCard"></h4>
+        </li>
+      </ul>
+    </div>
 
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="JS/view.js"></script>
-  <script src="JS/clientSide.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/JS/userClass.js"></script>
+    <script src="/JS/viewClass.js"></script>
+    <script src="JS/clientSide.js"></script>
 </body>
 
 </html>
