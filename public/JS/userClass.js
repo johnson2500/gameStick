@@ -40,6 +40,7 @@ class Deck {
       return this.currentBlackCardIndex;
     }
   }
+
 }
 
 class User {

@@ -14,15 +14,17 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  socket.on('disconnect', function(){
+
+  socket.on('disconnect', ()=>{
     console.log('user disconnected');
   });
 
-  socket.on('getBlackCard', function(msg){
+  socket.on('getBlackCard', (msg)=>{
+    console.log('getingBlack')
     socket.emit('card', decks.blackCardDeck.getCardFromDeck())
   });
 
-  socket.on('fillDeck', function(msg){
+  socket.on('fillDeck', (msg)=>{
     var x = [];
     for(var i = 0;i<7;i++){
       x.push(decks.blackCardDeck.getCardFromDeck())
@@ -31,7 +33,7 @@ io.on('connection', function(socket){
     console.log("There are " + decks.blackCardDeck.deck.length + " cards in the blackDeck");
   });
 
-  socket.on('getWhiteCard',function() {
+  socket.on('getWhiteCard',()=> {
     currentWhiteCard = decks.whiteCardDeck.getCardFromDeck();
     socket.broadcast.emit('whiteCard',currentWhiteCard)
     socket.emit('whiteCard',currentWhiteCard)
@@ -39,15 +41,14 @@ io.on('connection', function(socket){
 
   socket.emit('whiteCard',currentWhiteCard);
 
-  socket.on("userSubmittedCard",function(msg) {
-    console.log(msg);
-    socket.broadcast.emit('receivedWhiteCard',msg);
+  socket.on("submitCardToTable",(msg)=> {
+    socket.broadcast.emit("getUserSumbitedCard",msg);
   })
 
 
 });
 
 
-http.listen(3000, function(){
+http.listen(3000, ()=>{
   console.log('listening on *:3000');
 });
