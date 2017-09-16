@@ -1,0 +1,146 @@
+/* Global tags */
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+button{
+  width: 100%;
+  padding: 10px;
+}
+
+img{
+  width: 80%;
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  left:20px;
+  border-radius: 75px;
+  overflow: hidden;
+}
+
+/* Gloabal Classes */
+
+.center{
+  text-align: center;
+}
+
+/* landing page */
+
+#landingPage{
+  width: 90%;
+  position: fixed;
+  left: 5%;
+  height: 2%;
+}
+
+/* Card View */
+
+.card-container{
+  position: fixed;
+  left: calc((100% - (80vh/1.5))/2);
+  top: 10%;
+  height: 80vh;
+  width: calc(80vh/1.5);
+  border: 1px solid black;
+  border-radius: 75px;
+  text-align: center;
+  box-shadow: lightgray 10px 10px;
+  background: white;
+  color: black;
+  overflow: hidden;
+}
+
+#card-label{
+  background: inherit;
+  color: inherit;
+}
+
+
+.card{
+  position: relative;
+  top: 50%;
+  overflow: hidden;
+}
+
+/* Status Bar */
+
+.top-bar{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: black;
+  color: white;
+  list-style: none;
+  height: 5%;
+}
+
+.top-bar-menu{
+  text-align: center;
+  float: left;
+  color: inherit;
+  background: inherit;
+  width: calc(25% - 2%);
+  padding: 1%;
+  height: 100%;
+}
+
+.top-bar-menu:hover{
+  background: darkgray;
+}
+
+ul.top-bar>li.top-bar-menu>h1{
+  height: 100%;
+}
+
+.bottom-control{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.controls{
+  width: 100%;
+}
+
+.bottom-control-button{
+  width: 50%;
+  float: left;
+}
+
+/* Choose Card View */
+
+ul.cards-submitted-list{
+  width: 75%;
+  position: fixed;
+  right: 12.5%;
+  top: 2%;
+  text-align: center;
+  list-style: none;
+}
+
+li.card-submitted-title-container{
+  background: black;
+  color: white;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 2%;
+}
+
+li.card-submitted-title-container-white{
+  background: white;
+  border: 1px solid black;
+  color: black;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 2%;
+}
+
+.animate-left{
+
+}
+
+.animate-right{
+
+}
