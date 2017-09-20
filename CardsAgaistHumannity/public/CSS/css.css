@@ -1,34 +1,38 @@
 /* Global tags */
-
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
-button{
+body{
+  background: lightblue;
+  overflow: hidden;
+}
+
+button {
   width: 100%;
   padding: 10px;
 }
 
-img{
+img {
   width: 80%;
   position: absolute;
   height: auto;
   bottom: 0;
-  left:20px;
+  left: 20px;
   border-radius: 75px;
   overflow: hidden;
 }
 
 /* Gloabal Classes */
 
-.center{
+.center {
   text-align: center;
 }
 
 /* landing page */
 
-#landingPage{
+#landingPage {
   width: 90%;
   position: fixed;
   left: 5%;
@@ -37,46 +41,74 @@ img{
 
 /* Card View */
 
-.card-container{
+.black-card-container {
   position: fixed;
-  left: calc((100% - (80vh/1.5))/2);
-  top: 10%;
-  height: 80vh;
-  width: calc(80vh/1.5);
-  border: 1px solid black;
-  border-radius: 75px;
+  left: calc((100% - (80vh/2))/2);
+  top: 30%;
+  height: 60vh;
+  width: calc(80vh/2);
+  border-radius: 50px;
   text-align: center;
-  box-shadow: lightgray 10px 10px;
+  box-shadow: darkgray 10px 10px;
   background: white;
   color: black;
   overflow: hidden;
 }
 
-#card-label{
-  background: inherit;
-  color: inherit;
+.white-card-container{
+  position: fixed;
+  left: calc((100% - (80vh/2))/2);
+  top: 10%;
+  height: 15vh;
+  width: calc(80vh/2);
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: darkgray 10px 10px;
+  background: white;
+  color: black;
+  overflow: hidden;
 }
 
-
-.card{
+#whiteCardLabel {
   position: relative;
-  top: 50%;
-  overflow: hidden;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+#blackCardLabel {
+  text-align: center;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.black-card {
+  background: rgb(35, 31, 32);
+  color: white;
+}
+
+.white-card {
+  background: rgb(255, 255, 255);
+  color: black;
 }
 
 /* Status Bar */
 
-.top-bar{
+.status-bar {
   width: 100%;
   position: fixed;
   top: 0;
   background: black;
   color: white;
   list-style: none;
-  height: 5%;
+  height: auto;
 }
 
-.top-bar-menu{
+.sb-list {
   text-align: center;
   float: left;
   color: inherit;
@@ -86,32 +118,33 @@ img{
   height: 100%;
 }
 
-.top-bar-menu:hover{
-  background: darkgray;
+ul.status-bar>li.sb-list {
+  height: ;
+  % font-size: 10px;
 }
 
-ul.top-bar>li.top-bar-menu>h1{
-  height: 100%;
-}
 
-.bottom-control{
+/* bottom-control */
+
+.bottom-control {
   position: fixed;
   bottom: 0;
   width: 100vw;
 }
 
-.controls{
+.controls {
   width: 100%;
 }
 
-.bottom-control-button{
+.bottom-control-button {
   width: 50%;
   float: left;
 }
 
+
 /* Choose Card View */
 
-ul.cards-submitted-list{
+ul.cards-submitted-list {
   width: 75%;
   position: fixed;
   right: 12.5%;
@@ -120,7 +153,7 @@ ul.cards-submitted-list{
   list-style: none;
 }
 
-li.card-submitted-title-container{
+li.card-submitted-title-container {
   background: black;
   color: white;
   border-radius: 10px;
@@ -128,19 +161,11 @@ li.card-submitted-title-container{
   margin: 2%;
 }
 
-li.card-submitted-title-container-white{
+li.card-submitted-title-container-white {
   background: white;
   border: 1px solid black;
   color: black;
   border-radius: 10px;
   padding: 5%;
   margin: 2%;
-}
-
-.animate-left{
-
-}
-
-.animate-right{
-
 }

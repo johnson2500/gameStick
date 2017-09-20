@@ -4,60 +4,89 @@ class Card {
     this.index = index;
   }
 }
+
 class Deck {
   constructor() {
     this.blackCards = [];
     this.whiteCardsEarned = [];
     this.whiteCard = {};
-    this.currentBlackCardIndex = 0;
+    this.ind = 0;
   }
   insertCard(card) {
-    //put card in deck in the place of the old card
     this.blackCards.push(card);
   }
-  fillDeck(ar) {
-    for (var i = 0; i < ar.length; i++) {
-      var x = new Card(i, ar[i]); // get a black card
-      this.insertCard(x); // insert into user deck
-    }
-    deckView.blackView.content = this.blackCards[0].label;
+  insertNewCard(content){
+    this.blackCards[this.ind].label = content;
   }
-  getNextIndex() {
-    if (this.currentBlackCardIndex === 6) {
-      this.currentBlackCardIndex = 0;
-      return this.currentBlackCardIndex;
-    } else {
-      this.currentBlackCardIndex++
-      return this.currentBlackCardIndex;
-    }
-  }
-  getPrviousIndex() {
-    if (this.currentBlackCardIndex === 0) {
-      this.currentBlackCardIndex = 6;
-      return this.currentBlackCardIndex;
-    } else {
-      this.currentBlackCardIndex--
-      return this.currentBlackCardIndex;
-    }
-  }
-
 }
 
 class User {
   constructor() {
     this.id = 0;
+    this.userName = "";
     this.deck = new Deck();
-    this.opponentPickedCards = 0; //how many times someone choose your card
+    this.cardsEarned = 0;
     this.isPickingCards = false;
   }
 
-  pickBestCard() {
+  // Black Card Viewing Logic
 
+  getNextCard(){
+    return window.user.deck.blackCards[user.nextCardIndex()].label;
   }
 
+  getPreviousCard(){
+    return window.user.deck.blackCards[user.nextCardIndex()].label;
+  }
+
+  nextCardIndex() {
+    if (this.deck.ind === 6) {
+      this.deck.ind = 0;
+      return this.deck.ind;
+    } else {
+      this.deck.ind++
+      return this.deck.ind;
+    }
+  }
+
+  previousCardIndex() {
+    if (this.deck.ind === 0) {
+      this.deck.ind = 6;
+      return this.deck.ind;
+    } else {
+      this.deck.ind--
+      return this.deck.ind;
+    }
+  }
+
+  // Getting Black Card
+
+  fillHand(ar) {
+    for (var i = 0; i < ar.length; i++) {
+      var x = new Card(i, ar[i]); // get a black card
+      this.deck.insertCard(x);
+    }
+  }
+
+  getBlackCard(){
+    socket.emit('getBlackCard');
+  }
+
+  //Choosing Black Cards
+
   submitCardToTable() {
-    // submit the card from user deck that user thinks is funniest
-    socket.emit('userSubmittedCard', "test Cards");
+    socket.emit('submitCardToTable',this.deck.blackCards[this.deck.ind]);
+  }
+
+  // White Card Stuff
+
+  pickWhiteCard(){
+    // If is picking == true;
+    if(this.isPickingCards){
+        socket.emit("cardChosen",/* Some Card cardChosen */)
+    } else {
+      return
+    }
   }
 
 }

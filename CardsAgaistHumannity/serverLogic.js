@@ -42,7 +42,7 @@ io.on('connection', function(socket){
   socket.emit('whiteCard',currentWhiteCard);
 
   socket.on("submitCardToTable",(msg)=> {
-    socket.broadcast.emit("getUserSumbitedCard",msg);
+    socket.emit("newBlackCard", decks.blackCardDeck.getCardFromDeck());
   })
 
 
