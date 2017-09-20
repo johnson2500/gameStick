@@ -48,7 +48,6 @@ img {
   height: 60vh;
   width: calc(80vh/2);
   border-radius: 50px;
-  text-align: center;
   box-shadow: darkgray 10px 10px;
   background: white;
   color: black;
@@ -63,7 +62,6 @@ img {
   width: calc(80vh/2);
   border: 1px solid black;
   border-radius: 10px;
-  text-align: center;
   box-shadow: darkgray 10px 10px;
   background: white;
   color: black;
@@ -72,18 +70,16 @@ img {
 
 #whiteCardLabel {
   position: relative;
-  text-align: center;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 }
 
 #blackCardLabel {
-  text-align: center;
   position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 15%;
 }
 
 .black-card {

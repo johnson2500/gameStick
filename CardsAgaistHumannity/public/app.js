@@ -5,6 +5,12 @@ socket.emit("fillDeck")
 //===============================================================
 
 app.controller('blackCardController', ($scope) => {
+
+  function update() {
+    $scope.$apply(() => {
+      console.log("test")
+    })
+  }
   $scope.userName = user.userName;
   $scope.turn = user.userName;
   $scope.label = "Testing";
@@ -66,7 +72,6 @@ app.controller('blackCardController', ($scope) => {
     user.submitCardToTable();
   });
   //=== FUNCTIONS ======================================
-
 });
 
 //===============================================================
@@ -75,10 +80,10 @@ app.controller('blackCardController', ($scope) => {
 
 app.controller('whiteCardController', ($scope) => {
   $scope.whiteCardLabel = "testing"
-
   socket.emit('getWhiteCard');
   socket.on('whiteCard', (msg) => {
     $scope.whiteCardLabel = msg;
+    $scope.$apply();
   });
 
 });
