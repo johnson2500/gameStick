@@ -1,5 +1,21 @@
 socket.emit("fillDeck")
 
+app.controller('mainView', ($scope)=>{
+  $scope.view = "/templates/login.html";
+  $scope.startGame = ()=>{
+    $scope.view = "/templates/mainView.html"
+  }
+})
+
+app.controller('loginController', ($scope)=>{
+  $scope.startGame = ()=>{
+    user.userName = $scope.nickName;
+    user.gameCode = $scope.gameCode;
+    console.log(user)
+    socket.emit("newUser")
+  }
+})
+
 //===============================================================
 //=== Black Card Controller =====================================
 //===============================================================
@@ -15,6 +31,7 @@ app.controller('blackCardController', ($scope) => {
   $scope.turn = user.userName;
   $scope.label = "Testing";
   $scope.whiteCards = 0;
+  $scope.isInView = false;
 
   socket.on('card', (msg) => {
     $scope.label = msg;

@@ -3,59 +3,27 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport"
-  content="
-    height = device-height,
-    width = device-width,
-    initial-scale = 1.0,
-    minimum-scale = 1.0,
-    maximum-scale = 1.0,
-    user-scalable = no,
-    target-densitydpi = device-dpi
-    " />
-  <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=false;>
-  <link rel="stylesheet" href="CSS/css.css">
-</head>
-
-<body>
-  <div ng-controller="blackCardController">
-    <ul class="status-bar">
-      <li class="sb-list">User : <br>{{ userName }}</li>
-      <li class="sb-list">Cards Won : <br>{{ whiteCards }}</li>
-      <li class="sb-list">{{ turn }}'s turn</li>
-      <li class="sb-list">{{ test }}</li>
-    </ul>
-
-    <div ng-controller="whiteCardController" id="whiteCard" class="white-card-container white-card">
-      <h3 id="whiteCardLabel">{{ whiteCardLabel }}</h3>
-    </div>
-
-
-    <div id="blackCard" class="black-card-container black-card">
-      <h3 id="blackCardLabel">{{ label }}</h3>
-      <img id="logo" src="IMGS/blackLogo.PNG">
-    </div>
-
-    <div class="bottom-control">
-      <div class="controls">
-        <div id='view-switch' class="bottom-control-button">
-          <button id="viewSwitch">Switch Card</button>
-        </div>
-        <div class="bottom-control-button">
-          <button id="submitCard">Submit Card</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/CSS/css.css">
+</head>
+
+<body>
+
+  <div id="main" ng-include = "view" ng-controller="mainView">
+  </div>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="/JS/userClass.js"></script>
   <script src="/JS/app.js"></script>
   <script src="controllers.js">
   </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 
 </html>

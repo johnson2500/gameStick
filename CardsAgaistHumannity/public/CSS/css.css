@@ -5,8 +5,8 @@
 }
 
 body{
-  background: lightblue;
-  overflow: hidden;
+  background: beige;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 button {
@@ -24,21 +24,7 @@ img {
   overflow: hidden;
 }
 
-/* Gloabal Classes */
-
-.center {
-  text-align: center;
-}
-
-/* landing page */
-
-#landingPage {
-  width: 90%;
-  position: fixed;
-  left: 5%;
-  height: 2%;
-}
-
+/* Gloabal Classes
 /* Card View */
 
 .black-card-container {
@@ -123,8 +109,7 @@ ul.status-bar>li.sb-list {
 /* bottom-control */
 
 .bottom-control {
-  position: fixed;
-  bottom: 0;
+  position: fixed;  bottom: 0;
   width: 100vw;
 }
 
@@ -164,4 +149,10 @@ li.card-submitted-title-container-white {
   border-radius: 10px;
   padding: 5%;
   margin: 2%;
+}
+
+/* Boostrap overrider */
+
+div.row{
+  padding-bottom: 1%;
 }
