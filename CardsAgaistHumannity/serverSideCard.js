@@ -24,6 +24,7 @@ class Deck {
   };
 }
 
+
 exports.whiteCardDeck = new Deck(whiteCards.split("<>"), 'white');
 exports.blackCardDeck = new Deck(blackCards.split("<>"), 'black');
 exports.Deck;

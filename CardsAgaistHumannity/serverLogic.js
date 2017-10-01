@@ -3,6 +3,12 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var decks = require('./serverSideCard.js');
 
+class Game{
+  constructor(){
+    this.decks = decks;
+    this.users = [];
+  }
+}
 
 app.use(require('express').static('public'));
 var currentWhiteCard = decks.whiteCardDeck.getCardFromDeck();
@@ -12,7 +18,15 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
+  // init game in general
+
+  socket.on("startGame" ,function(){
+
+  })
+
+
   console.log(socket.id);
+  socket.emit('users',socket.id)
 
   socket.on('disconnect', () => {
     console.log('user disconnected');

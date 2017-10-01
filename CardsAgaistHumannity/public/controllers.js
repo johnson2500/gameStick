@@ -1,5 +1,9 @@
 socket.emit("fillDeck")
 
+socket.on('users',(data)=>{
+  console.log(data)
+})
+
 app.controller('mainView', ($scope)=>{
   $scope.view = "/templates/login.html";
   $scope.startGame = ()=>{
@@ -8,12 +12,17 @@ app.controller('mainView', ($scope)=>{
 })
 
 app.controller('loginController', ($scope)=>{
+  $scope.showGameCode = false;
   $scope.startGame = ()=>{
     user.userName = $scope.nickName;
     user.gameCode = $scope.gameCode;
     console.log(user)
     socket.emit("newUser")
   }
+
+  
+
+
 })
 
 //===============================================================

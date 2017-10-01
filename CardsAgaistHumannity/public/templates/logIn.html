@@ -1,17 +1,17 @@
-<div ng-controller="loginController">
-
-  <div class="container">
+<div ng-controller="loginController" class="white-text">
+  <div class="container text-sm-left text-md-left">
     <div class="row">
-      <h1 class="center col-sm-12 text-center">Welcome to Cards Against Humanity</h1>
+        <img src="/IMGS/cardslogo.png" id="logInLogo" class="col-12">
     </div>
     <div class="row no-gutters">
-      <select class="col-12">
         Join Game or Start Game
+      <select class="col-12">
+        <<option value="-">-</option>
         <option value="Join Room">Join Game</option>
         <option value="Start Room">Start Game</option>
       </select>
     </div>
-    <div class="row no-gutters">
+    <div ng-show="showGameCode" class="row no-gutters white-text">
       Enter the game code seen on the console.
       <input type="text" class="col-sm-12" placeholder="Game Code" ng-model="gameCode">
     </div>
@@ -19,6 +19,7 @@
       Enter the nick name players will know you by.
       <input type="text" class="col-sm-12" placeholder="Nickname" ng-model="nickName">
     </div>
+    <br>
     <div class="row no-gutters">
       <button type="button" class="btn btn-success col-12" ng-click="startGame()">Success</button>
     </div>
