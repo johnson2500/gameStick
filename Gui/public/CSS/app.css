@@ -1,0 +1,31 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+.app-module{
+  height: calc(20vh - 5vh);
+  width: calc(20vh - 5vh);
+  border-radius: 20%;
+  background: lightgray;
+  margin-top:5%;
+  padding:0;
+  overflow: hidden;
+}
+
+.full-icon{
+  width:100%;
+  overflow: hidden;
+}
+
+.add-space{
+  width: 100%;
+  border: 1px solid black;
+  height: 20vh;
+}
+
+.container{
+  width: 100%;
+  border: 20%;
+}
+
+.cardsAgainstHummanity{
+  background: black;
+}
